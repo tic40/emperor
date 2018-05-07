@@ -1,3 +1,3 @@
 class Feed < ApplicationRecord
-  has_many :entries, dependemt: :destroy
+  has_many :entries, dependent: :destroy
 end
