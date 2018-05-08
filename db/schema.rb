@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_07_123945) do
+ActiveRecord::Schema.define(version: 2018_05_08_061312) do
+
+  create_table "comments", force: :cascade do |t|
+    t.text "body"
+    t.datetime "timestamp"
+    t.string "user"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "entry_id"
+  end
 
   create_table "entries", force: :cascade do |t|
     t.string "title"
@@ -21,6 +30,8 @@ ActiveRecord::Schema.define(version: 2018_05_07_123945) do
     t.integer "feed_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "bookmark_count"
+    t.integer "eid"
   end
 
   create_table "feeds", force: :cascade do |t|
