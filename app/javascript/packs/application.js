@@ -8,7 +8,18 @@
 // layout file, like app/views/layouts/application.html.erb
 
 import React from 'react'
-import ReactDOM from 'react-dom'
-import IndexContainer from './containers/IndexContainer'
+import { render } from 'react-dom'
+import { createStore, applyMiddleware } from 'redux'
+import { Provider } from 'react-redux'
+import reducer from './reducers'
+import thunk from 'redux-thunk'
+import App from './components/App'
 
-ReactDOM.render(<IndexContainer />, document.getElementById('app'))
+const store = createStore(reducer, applyMiddleware(thunk))
+
+render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('app')
+)
