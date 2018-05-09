@@ -60,6 +60,8 @@ jobs:
           path: /tmp/test-results
           destination: test-results
 
+      - run: bash .circleci/setup-heroku.sh
+
       - deploy:
           name: Deploy Master to Heroku
           command: |
