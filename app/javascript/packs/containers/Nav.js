@@ -22,9 +22,7 @@ class Nav extends Component {
 
         <a
           className="navbar-item"
-          onClick={() =>
-            this.handleUpdateCurrentFeed(constants.FEED_LIST.ALL)
-          }
+          onClick={() => this.handleUpdateCurrentFeed(constants.FEED_LIST.ALL)}
         >
           {constants.FEED_LIST.ALL.name}
         </a>
@@ -58,9 +56,7 @@ class Nav extends Component {
 
         <a
           className="navbar-item"
-          onClick={() =>
-            this.handleUpdateCurrentFeed(constants.FEED_LIST.LIFE)
-          }
+          onClick={() => this.handleUpdateCurrentFeed(constants.FEED_LIST.LIFE)}
         >
           {constants.FEED_LIST.LIFE.name}
         </a>
@@ -83,9 +79,7 @@ class Nav extends Component {
 
         <a
           className="navbar-item"
-          onClick={() =>
-            this.handleUpdateCurrentFeed(constants.FEED_LIST.FUN)
-          }
+          onClick={() => this.handleUpdateCurrentFeed(constants.FEED_LIST.FUN)}
         >
           {constants.FEED_LIST.FUN.name}
         </a>
@@ -101,9 +95,7 @@ class Nav extends Component {
 
         <a
           className="navbar-item"
-          onClick={() =>
-            this.handleUpdateCurrentFeed(constants.FEED_LIST.GAME)
-          }
+          onClick={() => this.handleUpdateCurrentFeed(constants.FEED_LIST.GAME)}
         >
           {constants.FEED_LIST.GAME.name}
         </a>

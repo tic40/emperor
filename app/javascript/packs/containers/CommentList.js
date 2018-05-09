@@ -34,7 +34,17 @@ class CommentList extends Component {
                                 {i + 1}: {v.body}
                               </p>
                               <p className="has-text-right">
-                                <small>by <a href={userLink} target="_blank" rel="noopener">{v.user}</a> | {moment(v.timestamp).fromNow()}</small>
+                                <small>
+                                  by{' '}
+                                  <a
+                                    href={userLink}
+                                    target="_blank"
+                                    rel="noopener"
+                                  >
+                                    {v.user}
+                                  </a>{' '}
+                                  | {moment(v.timestamp).fromNow()}
+                                </small>
                               </p>
                             </li>
                           )

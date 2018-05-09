@@ -5,7 +5,6 @@ import Entry from '../components/Entry'
 import * as constants from '../constants/'
 
 class EntryList extends Component {
-
   componentDidMount () {
     const { dispatch, entry } = this.props
     dispatch(EntryAction.fetchEntries(constants.FEED_LIST.ALL))

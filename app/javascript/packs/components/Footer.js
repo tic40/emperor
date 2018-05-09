@@ -9,7 +9,11 @@ const Footer = () => {
     <footer className="content has-text-centered" style={style}>
       <p>
         Contact:{' '}
-        <a href="https://github.com/tic40/emperor" target="_blank" rel="noopener">
+        <a
+          href="https://github.com/tic40/emperor"
+          target="_blank"
+          rel="noopener"
+        >
           GitHub
         </a>{' '}
         /{' '}
