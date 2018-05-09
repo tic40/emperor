@@ -6,7 +6,9 @@ import * as constants from '../constants/index'
 class Nav extends Component {
   render () {
     const navTitle = {
-      border: '1px solid #3273dc'
+      border: '1px solid #ff6600',
+      color: '#ff6600',
+      fontWeight: 'bold'
     }
     return (
       <nav
@@ -110,9 +112,11 @@ class Nav extends Component {
   }
 
   handleUpdateCurrentFeed (feed) {
-    const { dispatch } = this.props
-    // dispatch(EntryAction.sendRequest())
-    // dispatch(EntryAction.fetchEntries(feed))
+    const { dispatch, entry } = this.props
+    if (entry.items[feed.name].length === 0) {
+      dispatch(EntryAction.sendRequest())
+      dispatch(EntryAction.fetchEntries(feed))
+    }
     dispatch(EntryAction.updateCurrentFeed(feed))
   }
 }

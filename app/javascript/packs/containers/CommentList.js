@@ -27,12 +27,15 @@ class CommentList extends Component {
                     <section className="modal-card-body">
                       <ul>
                         {entry.commentList.map((v, i) => {
+                          var userLink = 'http://b.hatena.ne.jp/' + v.user
                           return (
                             <li key={i}>
                               <p>
-                                {i + 1}. {v.user}: {v.body}
+                                {i + 1}: {v.body}
                               </p>
-                              <small>{moment(v.timestamp).fromNow()}</small>
+                              <p className="has-text-right">
+                                <small>by <a href={userLink} target="_blank" rel="noopener">{v.user}</a> | {moment(v.timestamp).fromNow()}</small>
+                              </p>
                             </li>
                           )
                         })}

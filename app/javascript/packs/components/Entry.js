@@ -10,18 +10,22 @@ const Entry = ({
   comments,
   commentOnClick
 }) => {
-  const subInfoStyle = {
+  const styleSubInfo = {
     marginLeft: '1rem'
   }
+  const styleList = {
+    marginTop: '0.8rem'
+  }
+
   return (
-    <li>
+    <li style={styleList}>
       <p>
         {id}.{' '}
         <a href={url} target="_blank" rel="noopener">
           {title} ({getHostName(url)})
         </a>
       </p>
-      <small style={subInfoStyle}>
+      <small style={styleSubInfo}>
         <a href={getBookmarkLink(url)} target="_blank" rel="noopener">
           {bookmarkCount} bookmarks
         </a>{' '}

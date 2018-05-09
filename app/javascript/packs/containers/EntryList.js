@@ -2,11 +2,13 @@ import React, { Component } from 'react'
 import { connect, Provider } from 'react-redux'
 import * as EntryAction from '../actions/entry'
 import Entry from '../components/Entry'
+import * as constants from '../constants/'
 
 class EntryList extends Component {
+
   componentDidMount () {
     const { dispatch, entry } = this.props
-    dispatch(EntryAction.fetchAllEntries())
+    dispatch(EntryAction.fetchEntries(constants.FEED_LIST.ALL))
   }
 
   render () {
@@ -14,6 +16,9 @@ class EntryList extends Component {
 
     const styleReloadButton = {
       margin: '1rem'
+    }
+    const styleEntryList = {
+      margin: '0.8rem'
     }
     return (
       <div>
@@ -39,7 +44,7 @@ class EntryList extends Component {
                     <i className="fa fa-sync-alt" />
                   </button>
                 </div>
-                <ul>
+                <ul style={styleEntryList}>
                   {entry.items[entry.currentFeed.name].map((v, i) => {
                     return (
                       <Entry
