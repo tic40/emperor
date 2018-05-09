@@ -41,6 +41,7 @@ class CommentList extends Component {
                     <footer className="modal-card-foot">
                       <button
                         className="button"
+                        aria-label="Close"
                         onClick={() => this.commentToggle()}
                       >
                         Close

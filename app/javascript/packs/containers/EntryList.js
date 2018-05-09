@@ -31,6 +31,7 @@ class EntryList extends Component {
                   FEED: {entry.currentFeed.name}{' '}
                   <button
                     className="button is-small"
+                    aria-label="reload"
                     onClick={() =>
                       this.handleFetchCurrentFeed(entry.currentFeed)
                     }
