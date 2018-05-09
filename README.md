@@ -1,24 +1,66 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## What's this?
 
-Things you may want to cover:
+Hatebu client
 
-* Ruby version
+https://tic40-emperor.herokuapp.com/
+(might change the domain...)
 
-* System dependencies
+## Requirement
 
-* Configuration
+* Ruby: v2.5.1
+* Rails: v5.2.0
+* Node.js: v9.5.0
+* yarn or npm
 
-* Database creation
+Back-end: Rails app
+Front-end: React/Redux app
 
-* Database initialization
+## Getting Started
 
-* How to run the test suite
+install gem packages
+```
+$ bundle install
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+install node modules
+```
+$ yarn
+```
 
-* Deployment instructions
+setup database
+```
+$ rails db:migrate
+```
 
-* ...
+create db master data
+```
+$ rails db:seed_fu
+```
+
+run app on your local
+```
+$ rails s
+$ ./bin/webpack-dev-server
+$ open http://localhost:3000
+```
+
+## Deploy
+
+Productiom env: Heroku
+
+Using CircleCI as CI/CD tool for this project.
+
+When master branch is updated, then the CircleCI run the auto test.
+after the test, CircleCI deploy master branch to the Heroku env.
+
+see the .circleci/config.yml. deploy recipe is written here.
+
+## For Developers
+
+TODO: write about back-end
+
+TODO: write about front-end
+
+TODO: write something about this app. purpose, differences, advantages..

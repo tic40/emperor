@@ -1,7 +1,7 @@
 export const FEED_LIST = {
   ALL: { id: 1, name: 'ALL' },
   GENERAL: { id: 2, name: 'GENERAL' },
-  SOCIAL: { id: 3, name: 'SOCIAl' },
+  SOCIAL: { id: 3, name: 'SOCIAL' },
   ECONOMICS: { id: 4, name: 'ECONOMICS' },
   LIFE: { id: 5, name: 'LIFE' },
   KNOWLEDGE: { id: 6, name: 'KNOWLEDGE' },

@@ -64,3 +64,11 @@ export const sendRequest = () => {
     type: actionTypes.SEND_REQUEST
   }
 }
+
+export const commentToggle = (comments = [], title = '') => {
+  return {
+    type: actionTypes.COMMENT_TOGGLE,
+    comments,
+    title
+  }
+}
