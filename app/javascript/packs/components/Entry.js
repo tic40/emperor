@@ -17,12 +17,12 @@ const Entry = ({
     <li>
       <p>
         {id}.{' '}
-        <a href={url} target="_blank">
+        <a href={url} target="_blank" rel="noopener">
           {title} ({getHostName(url)})
         </a>
       </p>
       <small style={subInfoStyle}>
-        <a href={getBookmarkLink(url)} target="_blank">
+        <a href={getBookmarkLink(url)} target="_blank" rel="noopener">
           {bookmarkCount} bookmarks
         </a>{' '}
         | <a onClick={commentOnClick}> {comments.length} comments</a> |{' '}
