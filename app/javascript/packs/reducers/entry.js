@@ -8,7 +8,10 @@ for (let k in constants.FEED_LIST) {
 const initialState = {
   currentFeed: constants.FEED_LIST.ALL,
   items: items,
-  isFetching: true
+  isFetching: true,
+  isCommentOpen: false,
+  commentList: [],
+  commentTitle: ''
 }
 
 const entry = (state = initialState, action) => {
@@ -36,6 +39,13 @@ const entry = (state = initialState, action) => {
       return {
         ...state,
         currentFeed: action.feed
+      }
+    case actionTypes.COMMENT_TOGGLE:
+      return {
+        ...state,
+        isCommentOpen: !state.isCommentOpen,
+        commentList: action.comments,
+        commentTitle: action.title
       }
     default:
       return state
