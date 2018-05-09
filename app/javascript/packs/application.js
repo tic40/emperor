@@ -14,7 +14,6 @@ import { Provider } from 'react-redux'
 import reducer from './reducers'
 import thunk from 'redux-thunk'
 import App from './components/App'
-import 'font-awesome/css/font-awesome.min.css'
 
 const store = createStore(reducer, applyMiddleware(thunk))
 
