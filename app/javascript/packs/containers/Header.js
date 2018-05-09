@@ -9,7 +9,7 @@ class Header extends Component {
       <div>
         <button
           onClick={() =>
-            this.handleUpdateCurrentFeed(constants.FEED_LIST.ALL.id)
+            this.handleUpdateCurrentFeed(constants.FEED_LIST.ALL)
           }
         >
           {constants.FEED_LIST.ALL.name}
@@ -17,7 +17,7 @@ class Header extends Component {
 
         <button
           onClick={() =>
-            this.handleUpdateCurrentFeed(constants.FEED_LIST.GENERAL.id)
+            this.handleUpdateCurrentFeed(constants.FEED_LIST.GENERAL)
           }
         >
           {constants.FEED_LIST.GENERAL.name}
@@ -26,10 +26,11 @@ class Header extends Component {
     )
   }
 
-  handleUpdateCurrentFeed (feedId) {
+  handleUpdateCurrentFeed (feed) {
     const { dispatch } = this.props
-    dispatch(EntryAction.fetchEntries(feedId))
-    dispatch(EntryAction.updateCurrentFeed(feedId))
+    // dispatch(EntryAction.sendRequest())
+    // dispatch(EntryAction.fetchEntries(feed))
+    dispatch(EntryAction.updateCurrentFeed(feed))
   }
 }
 

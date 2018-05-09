@@ -1,12 +1,12 @@
 export const FEED_LIST = {
-  ALL: { id: 1, name: 'all' },
-  GENERAL: { id: 2, name: 'general' },
-  SOCIAL: { id: 3, name: 'social' },
-  ECONOMICS: { id: 4, name: 'economics' },
-  LIFE: { id: 5, name: 'life' },
-  KNOWLEDGE: { id: 6, name: 'knowledge' },
-  IT: { id: 7, name: 'it' },
-  FUN: { id: 8, name: 'fun' },
-  ENTERTAINMENT: { id: 9, name: 'entertainment' },
-  GAME: { id: 10, name: 'game' }
+  ALL: { id: 1, name: 'ALL' },
+  GENERAL: { id: 2, name: 'GENERAL' },
+  SOCIAL: { id: 3, name: 'SOCIAl' },
+  ECONOMICS: { id: 4, name: 'ECONOMICS' },
+  LIFE: { id: 5, name: 'LIFE' },
+  KNOWLEDGE: { id: 6, name: 'KNOWLEDGE' },
+  IT: { id: 7, name: 'IT' },
+  FUN: { id: 8, name: 'FUN' },
+  ENTERTAINMENT: { id: 9, name: 'ENTERTAINMENT' },
+  GAME: { id: 10, name: 'GAME' }
 }

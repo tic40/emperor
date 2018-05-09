@@ -6,7 +6,7 @@ import Entry from '../components/Entry'
 class EntryList extends Component {
   componentDidMount () {
     const { dispatch } = this.props
-    dispatch(EntryAction.fetchEntries())
+    dispatch(EntryAction.fetchAllEntries())
   }
 
   render () {
@@ -14,21 +14,34 @@ class EntryList extends Component {
 
     return (
       <div>
-        <ul>
-          {entry.items.map((v, i) => {
+        {(() => {
+          if (entry.isFetching) {
             return (
-              <Entry
-                key={i + 1}
-                id={i + 1}
-                title={v.title}
-                url={v.url}
-                bookmark_count={v.bookmark_count}
-                published={v.published}
-                comments={v.comments}
-              />
+              <div>
+                loading:
+                <i class="fa fa-5x fa-spinner fa-spin"></i>
+              </div>
             )
-          })}
-        </ul>
+          } else {
+            return (
+              <ul>
+                {entry.items[entry.currentFeed.name].map((v, i) => {
+                  return (
+                    <Entry
+                      key={i + 1}
+                      id={i + 1}
+                      title={v.title}
+                      url={v.url}
+                      bookmarkCount={v.bookmark_count}
+                      published={v.published}
+                      comments={v.comments}
+                    />
+                  )
+                })}
+              </ul>
+            )
+          }
+        })()}
       </div>
     )
   }
