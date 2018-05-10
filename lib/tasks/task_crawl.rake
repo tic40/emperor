@@ -1,6 +1,7 @@
-namespace :task_crawl do
+# frozen_string_literal: true
 
-  desc "task crawl"
+namespace :task_crawl do
+  desc 'task crawl'
   task feeds: :environment do
     ActiveRecord::Base.transaction do
       # delete all entries and comments
@@ -8,9 +9,8 @@ namespace :task_crawl do
 
       Feed.all.each do |f|
         Feedjira::Feed.fetch_and_parse(f.url).entries.each do |item|
-
           # this is for displaying progress
-          print "."
+          print '.'
 
           # fetch hatena bookmark info via api
           uri = URI.parse "http://b.hatena.ne.jp/entry/json/?url=#{item.url}"
@@ -20,7 +20,7 @@ namespace :task_crawl do
           end
           res.body = JSON.parse(res.body)
 
-          # save entry
+          # entry
           entry = Entry.create!(
             title: item.title,
             published: item.published,
@@ -31,20 +31,18 @@ namespace :task_crawl do
             bookmark_count: res.body['bookmarks'].present? ? res.body['bookmarks'].count : nil
           )
 
-          # save comments
-          if res.body['bookmarks'].present?
-            res.body['bookmarks'].each do |b|
-              if b['comment'].present?
-                entry.comments.create!(
-                  body: b['comment'],
-                  timestamp: b['timestamp'],
-                  user: b['user']
-                )
-              end
-            end
+          # skip if no bookmarks
+          next if res.body['bookmarks'].empty?
+          res.body['bookmarks'].each do |b|
+            # skip if no comment
+            next if b['comment'].empty?
+            entry.comments.create!(
+              body: b['comment'],
+              timestamp: b['timestamp'],
+              user: b['user']
+            )
           end
           sleep 0.1
-
         end
         sleep 1
       end
