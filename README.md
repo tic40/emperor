@@ -19,7 +19,7 @@ URL: https://tic40-emperor.herokuapp.com/
 ## Getting Started
 
 Docker is the easiest way to create local environment.
-```
+```bash
 # build and start
 $ docker-compose up
 
@@ -34,27 +34,27 @@ Docker recipe is in the Dockerfile and docker-compose.yml.
 
 
 Install gem packages
-```
+```bash
 $ bundle install
 ```
 
 Install node modules via yarn
-```
+```bash
 $ yarn
 ```
 
 Setup database
-```
+```bash
 $ rails db:migrate
 ```
 
 Create master data
-```
+```bash
 $ rails db:seed_fu
 ```
 
 Run app on your local
-```
+```bash
 # run Rails server
 $ rails s
 
@@ -87,7 +87,7 @@ Crawling task: lib/tasks/task_crawl.rake
 1. store entries info to Database
 
 Run
-```
+```bash
 $ rails task_crawl:feeds
 ```
 
@@ -115,19 +115,19 @@ app/javascript/packs/
    |-utils
 ```
 
-### Style
+#### CSS Style
 
 Adopting Bulma(https://bulma.io/) as main CSS FW.
 
 #### Static Code Analyzer
 
 Run eslint
-```
+```bash
 $ yarn run lint
 ```
 
 Run prettier(code formatter)
-```
+```bash
 $ yarn run prettier
 ```
 
