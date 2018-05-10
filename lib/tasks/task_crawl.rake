@@ -8,13 +8,9 @@ namespace :task_crawl do
 
       Feed.all.each do |f|
         Feedjira::Feed.fetch_and_parse(f.url).entries.each do |item|
-          # TODO: remove these output
-          p item.url
-          p item.published
-          p item.content
-          p item.title
-          p f.id
-          puts '===='
+
+          # this is for displaying progress
+          print "."
 
           # fetch hatena bookmark info via api
           uri = URI.parse "http://b.hatena.ne.jp/entry/json/?url=#{item.url}"
@@ -53,5 +49,6 @@ namespace :task_crawl do
         sleep 1
       end
     end
+    puts 'done'
   end
 end
