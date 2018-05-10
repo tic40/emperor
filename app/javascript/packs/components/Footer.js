@@ -12,16 +12,16 @@ const Footer = () => {
         <a
           href="https://github.com/tic40/emperor"
           target="_blank"
-          rel="noopener"
+          rel="noopener noreferrer"
         >
           GitHub
         </a>{' '}
         /{' '}
-        <a href="https://twitter.com/tic40" target="_blank" rel="noopener">
+        <a href="https://twitter.com/tic40" target="_blank" rel="noopener noreferrer">
           Twitter
         </a>{' '}
         /{' '}
-        <a href="http://tic40.hatenablog.com/" target="_blank" rel="noopener">
+        <a href="http://tic40.hatenablog.com/" target="_blank" rel="noopener noreferrer">
           Blog
         </a>
       </p>

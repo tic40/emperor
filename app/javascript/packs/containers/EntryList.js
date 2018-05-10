@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
-import { connect, Provider } from 'react-redux'
+import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 import * as EntryAction from '../actions/entry'
 import Entry from '../components/Entry'
 import * as constants from '../constants/'
 
 class EntryList extends Component {
   componentDidMount () {
-    const { dispatch, entry } = this.props
+    const { dispatch } = this.props
     dispatch(EntryAction.fetchEntries(constants.FEED_LIST.ALL))
   }
 
@@ -79,6 +80,11 @@ class EntryList extends Component {
     const { dispatch } = this.props
     dispatch(EntryAction.commentToggle(comments, title))
   }
+}
+
+EntryList.propTypes = {
+  dispatch: PropTypes.func,
+  entry: PropTypes.object
 }
 
 function mapStateToProps (state) {

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 import * as EntryAction from '../actions/entry'
 import * as constants from '../constants/index'
 
@@ -111,6 +112,11 @@ class Nav extends Component {
     }
     dispatch(EntryAction.updateCurrentFeed(feed))
   }
+}
+
+Nav.propTypes = {
+  dispatch: PropTypes.func,
+  entry: PropTypes.object
 }
 
 function mapStateToProps (state) {

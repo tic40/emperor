@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { connect, Provider } from 'react-redux'
+import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 import * as EntryAction from '../actions/entry'
 import moment from 'moment'
 
@@ -39,7 +40,7 @@ class CommentList extends Component {
                                   <a
                                     href={userLink}
                                     target="_blank"
-                                    rel="noopener"
+                                    rel="noopener noreferrer"
                                   >
                                     {v.user}
                                   </a>{' '}
@@ -74,6 +75,11 @@ class CommentList extends Component {
     const { dispatch } = this.props
     dispatch(EntryAction.commentToggle())
   }
+}
+
+CommentList.propTypes = {
+  dispatch: PropTypes.func,
+  entry: PropTypes.object
 }
 
 function mapStateToProps (state) {
