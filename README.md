@@ -88,7 +88,7 @@ Run rubocop
 $ rubocop -R
 ```
 
-### front-end
+### Front-end
 
 React/Redux pattern.
 
@@ -125,8 +125,8 @@ Production Server: Heroku
 
 Tools on the production.
 - CircleCI: as CI/CD.
-- Redis: as API cache
-- Heroku Scheduler: execute crawling task
+- Redis: as API cache.
+- Heroku Scheduler: Execute crawling task.
 
 When the master branch on GitHub is updated, then the CircleCI will deploy to the Heroku if it passes the all test and installation.
 
