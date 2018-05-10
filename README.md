@@ -121,7 +121,7 @@ not written yet.
 
 ### Production Deploy(for administrator)
 
-Productiom env: Heroku
+Production Server: Heroku
 
 Tools on the production.
 - CircleCI: as CI/CD.
