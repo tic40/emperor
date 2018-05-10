@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { connect, Provider } from 'react-redux'
+import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 import * as EntryAction from '../actions/entry'
 import moment from 'moment'
 
@@ -27,12 +28,25 @@ class CommentList extends Component {
                     <section className="modal-card-body">
                       <ul>
                         {entry.commentList.map((v, i) => {
+                          var userLink = 'http://b.hatena.ne.jp/' + v.user
                           return (
                             <li key={i}>
                               <p>
-                                {i + 1}. {v.user}: {v.body}
+                                {i + 1}: {v.body}
                               </p>
-                              <small>{moment(v.timestamp).fromNow()}</small>
+                              <p className="has-text-right">
+                                <small>
+                                  by{' '}
+                                  <a
+                                    href={userLink}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                  >
+                                    {v.user}
+                                  </a>{' '}
+                                  | {moment(v.timestamp).fromNow()}
+                                </small>
+                              </p>
                             </li>
                           )
                         })}
@@ -41,6 +55,7 @@ class CommentList extends Component {
                     <footer className="modal-card-foot">
                       <button
                         className="button"
+                        aria-label="Close"
                         onClick={() => this.commentToggle()}
                       >
                         Close
@@ -60,6 +75,11 @@ class CommentList extends Component {
     const { dispatch } = this.props
     dispatch(EntryAction.commentToggle())
   }
+}
+
+CommentList.propTypes = {
+  dispatch: PropTypes.func,
+  entry: PropTypes.object
 }
 
 function mapStateToProps (state) {

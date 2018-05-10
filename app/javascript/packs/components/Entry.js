@@ -1,5 +1,6 @@
 import React from 'react'
 import moment from 'moment'
+import PropTypes from 'prop-types'
 
 const Entry = ({
   id,
@@ -10,19 +11,27 @@ const Entry = ({
   comments,
   commentOnClick
 }) => {
-  const subInfoStyle = {
+  const styleSubInfo = {
     marginLeft: '1rem'
   }
+  const styleList = {
+    marginTop: '0.8rem'
+  }
+
   return (
-    <li>
+    <li style={styleList}>
       <p>
         {id}.{' '}
-        <a href={url} target="_blank">
+        <a href={url} target="_blank" rel="noopener noreferrer">
           {title} ({getHostName(url)})
         </a>
       </p>
-      <small style={subInfoStyle}>
-        <a href={getBookmarkLink(url)} target="_blank">
+      <small style={styleSubInfo}>
+        <a
+          href={getBookmarkLink(url)}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           {bookmarkCount} bookmarks
         </a>{' '}
         | <a onClick={commentOnClick}> {comments.length} comments</a> |{' '}
@@ -30,6 +39,16 @@ const Entry = ({
       </small>
     </li>
   )
+}
+
+Entry.propTypes = {
+  id: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
+  bookmarkCount: PropTypes.number.isRequired,
+  published: PropTypes.string.isRequired,
+  comments: PropTypes.array.isRequired,
+  commentOnClick: PropTypes.func.isRequired
 }
 
 const getBookmarkLink = url => {

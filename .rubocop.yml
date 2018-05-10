@@ -1,0 +1,24 @@
+AllCops:
+  Exclude:
+    - 'db/migrate/**/*'
+    - 'db/fixtures/**/*'
+    - 'db/schema.rb'
+    - 'log/**/*'
+    - 'node_modules/**/*'
+    - 'tmp/**/*'
+    - 'vendor/**/*'
+    - 'config/**/*'
+    - 'bin/**/*'
+  TargetRubyVersion: 2.5
+
+Rails:
+ Enabled: true
+
+Metrics/LineLength:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false

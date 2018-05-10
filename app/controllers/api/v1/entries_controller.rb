@@ -1,12 +1,16 @@
 class Api::V1::EntriesController < ApplicationController
 
   def index
-    entries = Entry.all
-    render json: entries, include: [:comments, :feed]
+    entries = Rails.cache.fetch("api/v1/entries", expires_in: 5.minutes) do
+      Entry.all.includes(:comments, :feed).to_json(include: %i[comments feed])
+    end
+    render json: entries
   end
 
   def show
-    entries = Entry.where(feed_id: params[:id])
-    render json: entries, include: [:comments, :feed]
+    entries = Rails.cache.fetch("api/v1/entries/#{params[:id]}", expires_in: 5.minutes) do
+      Entry.where(feed_id: params[:id]).includes(:comments, :feed).to_json(include: %i[comments feed])
+    end
+    render json: entries
   end
 end

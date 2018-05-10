@@ -1,13 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
-    <title>SampleView</title>
+    <meta name="description" content="Hatebu Client">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="@tic40" />
+    <meta name="twitter:description" content="Hatebu Client" />
+
+    <meta property="og:url" content="https://tic40-emperor.herokuapp.com/" />
+    <meta property="og:title" content="Hatebu Client" />
+    <meta property="og:description" content="Hatebu Client" />
+    <meta property="og:image" content="" />
+
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <title>Hatebu Client</title>
     <%= csrf_meta_tags %>
   </head>
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.css" />
   <body>
     <%= yield %>
   </body>

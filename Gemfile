@@ -12,6 +12,7 @@ gem 'webpacker'
 
 gem 'feedjira'
 gem 'httparty'
+gem 'redis-rails'
 gem 'seed-fu'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.5'
@@ -46,6 +47,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'rubocop', require: false
 end
 
 group :production do
