@@ -40,8 +40,6 @@ $ rails db:seed_fu
 
 Run app on your local env
 ```
-
-
 # run Rails server
 $ rails s
 
