@@ -40,6 +40,8 @@ $ rails db:seed_fu
 
 Run app on your local env
 ```
+
+
 # run Rails server
 $ rails s
 
@@ -65,6 +67,21 @@ is designed along with the REST style.
 
 see http://localhost:3000/rails/info/routes or ```$ routes routes``` 
 
+#### Crawling Task
+
+
+Task file: lib/tasks/task_crawl.rake
+
+1. crawl hatebu rss
+1. fetch hatebu API for each entries
+1. store entries info to Database
+
+Run
+```
+$ rails task_crawl:feeds
+```
+
+Do not execute the task many times in a short period of time. 
 
 #### Static Code Analyzer
 
@@ -108,8 +125,15 @@ not written yet.
 
 Productiom env: Heroku
 
-Using CircleCI as CI/CD for this project.
+Tools on the production.
+- CircleCI: as CI/CD.
+- Redis: as API cache
+- Heroku Scheduler: execute crawling task
 
 When the master branch on GitHub is updated, then the CircleCI will deploy to the Heroku if it passes the all test and installation.
 
 see the .circleci/config.yml. the deploy recipe here.
+
+## Reference
+
+- Hatena Developer Center: http://developer.hatena.ne.jp/
