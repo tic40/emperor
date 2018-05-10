@@ -2,65 +2,114 @@
 
 ## What's this?
 
-Hatebu client
+Hatebu(http://b.hatena.ne.jp/) client built with Rails API and React/Redux app. 
 
-https://tic40-emperor.herokuapp.com/
-(might change the domain...)
+URL: https://tic40-emperor.herokuapp.com/
+(might change the domain)
 
 ## Requirement
 
 * Ruby: v2.5.1
-* Rails: v5.2.0
 * Node.js: v9.5.0
 * yarn or npm
-
-Back-end: Rails app
-Front-end: React/Redux app
+* FW
+  * Back-end: Rails v5.2.0
+  * Front-end: React v16 / Redux
 
 ## Getting Started
 
-install gem packages
+Install gem packages
 ```
 $ bundle install
 ```
 
-install node modules
+Install node modules via yarn
 ```
 $ yarn
 ```
 
-setup database
+Setup database
 ```
 $ rails db:migrate
 ```
 
-create db master data
+Create db master data
 ```
 $ rails db:seed_fu
 ```
 
-run app on your local
+Run app on your local env
 ```
+# run Rails server
 $ rails s
+
+# run webpack dev server
 $ ./bin/webpack-dev-server
+
+# now the app is working. you can see it at locahost:3000 on your browser.
 $ open http://localhost:3000
 ```
 
-## Deploy
+## For Developers
+
+### Back-end
+
+Rails app is created API mode and webpack=react(--webpack=react --api)
+
+#### API
+
+is designed along with the REST style.
+
+- endpoint: /api/v{current version number}/**/*
+- response: json
+
+see http://localhost:3000/rails/info/routes or ```$ routes routes``` 
+
+
+#### Static Code Analyzer
+
+Run rubocop
+```bash
+$ rubocop -R
+```
+
+### front-end
+
+React/Redux pattern.
+
+```
+# directories
+app/javascript/packs/
+   |-actions
+   |-components
+   |-constants
+   |-containers
+   |-reducers
+   |-utils
+```
+
+#### Static Code Analyzer
+
+Run eslint
+```
+$ yarn run lint
+```
+
+Run prettier(code formatter)
+```
+$ yarn run prettier
+```
+
+#### Testing
+
+not written yet.
+
+### Production Deploy(for administrator)
 
 Productiom env: Heroku
 
-Using CircleCI as CI/CD tool for this project.
+Using CircleCI as CI/CD for this project.
 
-When master branch is updated, then the CircleCI run the auto test.
-after the test, CircleCI deploy master branch to the Heroku env.
+When the master branch on GitHub is updated, then the CircleCI will deploy to the Heroku if it passes the all test and installation.
 
-see the .circleci/config.yml. deploy recipe is written here.
-
-## For Developers
-
-TODO: write about back-end
-
-TODO: write about front-end
-
-TODO: write something about this app. purpose, differences, advantages..
+see the .circleci/config.yml. the deploy recipe here.
