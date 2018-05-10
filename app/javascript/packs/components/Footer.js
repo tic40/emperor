@@ -17,11 +17,19 @@ const Footer = () => {
           GitHub
         </a>{' '}
         /{' '}
-        <a href="https://twitter.com/tic40" target="_blank" rel="noopener noreferrer">
+        <a
+          href="https://twitter.com/tic40"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Twitter
         </a>{' '}
         /{' '}
-        <a href="http://tic40.hatenablog.com/" target="_blank" rel="noopener noreferrer">
+        <a
+          href="http://tic40.hatenablog.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Blog
         </a>
       </p>

@@ -27,7 +27,11 @@ const Entry = ({
         </a>
       </p>
       <small style={styleSubInfo}>
-        <a href={getBookmarkLink(url)} target="_blank" rel="noopener noreferrer">
+        <a
+          href={getBookmarkLink(url)}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           {bookmarkCount} bookmarks
         </a>{' '}
         | <a onClick={commentOnClick}> {comments.length} comments</a> |{' '}
