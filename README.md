@@ -11,7 +11,7 @@ URL: https://tic40-emperor.herokuapp.com/
 
 * Ruby: v2.5.1
 * Node.js: v9.5.0
-* yarn or npm
+* yarn
 * FW
   * Back-end: Rails v5.2.0
   * Front-end: React v16 / Redux
@@ -30,7 +30,7 @@ $ docker-compose stop
 $ docker exec -it {container-name} /bin/bash
 ```
 
-*See the Dockerfile and docker-compose.yml.
+*See the Dockerfile and docker-compose.yml about the details.
 
 
 Install gem packages
@@ -69,7 +69,7 @@ $ open http://localhost:3000
 
 ### Back-end
 
-Rails App which is created API mode and webpacker option(Rails new . --webpack=react --api)
+Rails Application which is created with API mode and webpacker option(Rails new . --webpack=react --api)
 
 #### API
 
@@ -80,10 +80,11 @@ is designed along with the REST.
 
 #### Crawling Task
 
-Crawling task: lib/tasks/task_crawl.rake
+lib/tasks/task_crawl.rake
 
-Run
+Execute crawling task
 ```bash
+# fetch feeds and entry info, and store them to database.
 $ rails task_crawl:feeds
 ```
 
@@ -98,10 +99,10 @@ $ rubocop -R
 
 ### Front-end
 
-React/Redux pattern.
+React/Redux App.
 
+Directories
 ```
-# directories
 app/javascript/packs/
    |-actions
    |-components
