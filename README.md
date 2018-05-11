@@ -18,7 +18,7 @@ URL: https://tic40-emperor.herokuapp.com/
 
 ## Getting Started
 
-Docker is the easiest way to create local environment.
+Using Docker is the easiest way to create local environment.
 ```bash
 # build and start
 $ docker-compose up
@@ -30,7 +30,7 @@ $ docker-compose stop
 $ docker exec -it {container-name} /bin/bash
 ```
 
-Docker recipe is in the Dockerfile and docker-compose.yml.
+*See the Dockerfile and docker-compose.yml.
 
 
 Install gem packages
@@ -69,22 +69,18 @@ $ open http://localhost:3000
 
 ### Back-end
 
-Rails app is created API mode and webpacker(--webpack=react --api)
+Rails App which is created API mode and webpacker option(Rails new . --webpack=react --api)
 
 #### API
 
-is designed along with the REST style.
+is designed along with the REST.
 
 - endpoint: /api/v{version number}/**/*
-- response: json
+- response type: json
 
 #### Crawling Task
 
 Crawling task: lib/tasks/task_crawl.rake
-
-1. crawl hatebu rss
-1. fetch hatebu API for each entries
-1. store entries info to Database
 
 Run
 ```bash
@@ -93,9 +89,9 @@ $ rails task_crawl:feeds
 
 *caution: Do not execute the task many times in a short period of time. 
 
-#### Static Code Analyzer
+#### Static Code Analyzer for Rails
 
-Run rubocop
+rubocop
 ```bash
 $ rubocop -R
 ```
@@ -119,14 +115,14 @@ app/javascript/packs/
 
 Adopting Bulma(https://bulma.io/) as main CSS FW.
 
-#### Static Code Analyzer
+#### Static Code Analyzer for JavaScript
 
-Run eslint
+eslint
 ```bash
 $ yarn run lint
 ```
 
-Run prettier(code formatter)
+prettier(code formatter)
 ```bash
 $ yarn run prettier
 ```
@@ -141,7 +137,7 @@ Production Server: Heroku
 
 Tools on the production.
 - CircleCI: as CI/CD.
-- Redis: as API cache.
+- Redis: as cache server.
 - Heroku Scheduler: Execute crawling task.
 
 When the master branch on GitHub is updated, then the CircleCI will deploy to the Heroku automatically if it passes the all test and installation.
