@@ -1,5 +1,7 @@
 # README
 
+![](./image.png)
+
 ## What's this?
 
 Hatebu(http://b.hatena.ne.jp/) client built with Rails and React/Redux. 
