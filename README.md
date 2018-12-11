@@ -4,7 +4,7 @@
 
 ## What's this?
 
-Hatebu(http://b.hatena.ne.jp/) client built with Rails and React/Redux. 
+Hatebu(http://b.hatena.ne.jp/) client built with Rails and React/Redux.
 
 URL: https://tic40-emperor.herokuapp.com/
 (might change the domain..)
@@ -90,7 +90,7 @@ Execute crawling task
 $ rails task_crawl:feeds
 ```
 
-*caution: Do not execute the task many times in a short period of time. 
+*caution: Do not execute the task many times in a short period of time.
 
 #### Static Code Analyzer for Rails
 
