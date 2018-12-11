@@ -1,5 +1,5 @@
-class AddEidToEntry < ActiveRecord::Migration[5.2]
-  def up
+class ChangeColumnEidForEntry < ActiveRecord::Migration[5.2]
+  def change
     change_column :entries, :eid, :bigint
   end
 end
